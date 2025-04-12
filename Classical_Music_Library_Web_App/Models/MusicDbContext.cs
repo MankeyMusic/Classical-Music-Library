@@ -1,3 +1,5 @@
+using Microsoft.EntityFrameworkCore;
+
 namespace Classical_Music_Library_Web_App.Models
 {
     public class MusicDbContext
