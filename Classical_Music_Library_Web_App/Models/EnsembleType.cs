@@ -1,8 +1,13 @@
-﻿using System;
+﻿using System.Collections.Generic;
 
-public class Class1
+namespace Classical_Music_Library_Web_App.Models;
 {
-	public Class1()
+	public class EnsembleType
 	{
+		public int EnsembleTypeID { get; set; }
+		public string TypeName { get; set; }
+		public string Description { get; set; }
+
+		public ICollection<Recording> Recordings { get; set; }
 	}
 }
