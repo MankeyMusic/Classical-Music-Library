@@ -1,8 +1,13 @@
-﻿using System;
+﻿using System.Collections.Generic;
 
-public class Class1
+namespace Classical_Music_Library_Web_App.Models
 {
-	public Class1()
-	{
-	}
+    public class Genre
+    {
+	    public int GenreID { get; set; }
+        public string GenreName { get; set; }
+
+        public ICollection<Recording> Recordings { get; set; }
+
+    }
 }

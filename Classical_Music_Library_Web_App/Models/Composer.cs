@@ -1,5 +1,5 @@
 ﻿using System.Collections.Generic; //This is necessary for the Compositions property.
-namespace Classical_Music_Library_Web_App.Models;
+namespace Classical_Music_Library_Web_App.Models
 {
 	public class Composer
 	{
