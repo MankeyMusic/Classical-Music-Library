@@ -26,19 +26,22 @@
             @Html.DisplayNameFor(model => model.Composer)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Composer.ComposerID)
+            <!-- CHANGED: Added null-conditional operator and fallback -->
+            @(Model.Composer?.ComposerID.ToString() ?? "N/A")
         </dd>
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.EnsembleType)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.EnsembleType.EnsembleTypeID)
+            <!-- CHANGED: Added null-conditional operator and fallback -->
+            @(Model.EnsembleType?.EnsembleTypeID.ToString() ?? "N/A")
         </dd>
         <dt class = "col-sm-2">
             @Html.DisplayNameFor(model => model.Genre)
         </dt>
         <dd class = "col-sm-10">
-            @Html.DisplayFor(model => model.Genre.GenreID)
+            <!-- CHANGED: Added null-conditional operator and fallback -->
+            @(Model.Genre?.GenreID.ToString() ?? "N/A")
         </dd>
     </dl>
 </div>

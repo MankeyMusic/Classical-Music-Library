@@ -22,6 +22,7 @@ namespace Classical_Music_Library_Web_App.Models
                 entity.HasOne(c => c.Composer)
                     .WithMany(c => c.Compositions)
                     .HasForeignKey(c => c.ComposerID)
+                    .IsRequired() // Non-nullable (required)
                     .OnDelete(DeleteBehavior.Restrict);
 
                 entity.HasOne(c => c.EnsembleType)
