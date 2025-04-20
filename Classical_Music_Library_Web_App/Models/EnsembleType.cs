@@ -1,12 +1,14 @@
 ﻿namespace Classical_Music_Library_Web_App.Models
 {
+    // Represents musical ensemble types (e.g., Orchestra, String Quartet)
     public class EnsembleType
     {
-        public int EnsembleTypeID { get; set; }
-        public string? TypeName { get; set; }
-        public string? Description { get; set; }
+        public int EnsembleTypeID { get; set; }       // Primary key
+        [Required]
+        public string TypeName { get; set; }          // e.g., "Symphony Orchestra"
+        public string? Description { get; set; }      // Optional details
 
-        public ICollection<Composition> Compositions { get; set; } = new List<Composition>();
-        public ICollection<Recording> Recordings { get; set; } = new List<Recording>();
+        // Navigation property (1 ensemble type → many compositions)
+        public ICollection<Composition>? Compositions { get; set; }
     }
 }

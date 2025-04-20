@@ -1,4 +1,6 @@
-﻿namespace Classical_Music_Library_Web_App.Models
+﻿using Classical_Music_Library_Web_App.Data;
+
+namespace Classical_Music_Library_Web_App.Models
 {
     public class Recording
     {

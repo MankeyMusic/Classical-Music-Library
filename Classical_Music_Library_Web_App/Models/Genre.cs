@@ -1,11 +1,13 @@
 ﻿namespace Classical_Music_Library_Web_App.Models
 {
+    // Represents music genres (e.g., Symphony, Concerto)
     public class Genre
     {
-        public int GenreID { get; set; }
-        public string? GenreName { get; set; }
+        public int GenreID { get; set; }             // Primary key
+        [Required]
+        public string GenreName { get; set; }        // e.g., "Opera", "Sonata"
 
-        public ICollection<Composition> Compositions { get; set; } = new List<Composition>();
-        public ICollection<Recording> Recordings { get; set; } = new List<Recording>();
+        // Navigation property (1 genre → many compositions)
+        public ICollection<Composition>? Compositions { get; set; }
     }
 }

@@ -1,8 +1,23 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Classical Music Library";
 }
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+    <h1>Classical Music Library</h1>
+
+    <!-- CRUD Navigation -->
+    <div class="mt-4">
+        <a href="/Music/Composers" class="btn btn-primary">Manage Composers</a>
+        <a href="/Music/Compositions" class="btn btn-primary">Manage Works</a>
+        <a href="/Music/Recordings" class="btn btn-primary">Manage Recordings</a>
+    </div>
+
+    <!-- Predefined Queries -->
+    <div class="mt-4">
+        <h4>Predefined Queries</h4>
+        <div class="btn-group">
+            <a href="/Music/AvailableRecordings" class="btn btn-secondary">Available Recordings</a>
+            <a href="/Music/PopularCompositions" class="btn btn-secondary">Popular Works</a>
+        </div>
+    </div>
 </div>

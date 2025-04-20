@@ -1,21 +1,22 @@
 ﻿namespace Classical_Music_Library_Web_App.Models
 {
+    // Represents a musical work (e.g., Symphony No. 5)
     public class Composition
     {
-        public int CompositionID { get; set; }
-        public string? Title { get; set; }
-        public int ComposerID { get; set; }  // Non-nullable (required)
-        public int? EnsembleTypeID { get; set; }  // Nullable (optional)
-        public int? GenreID { get; set; }  // Nullable (optional)
-        public int? YearComposed { get; set; }
+        public int CompositionID { get; set; }        // Primary key
+        [Required]
+        public string Title { get; set; }             // e.g., "Moonlight Sonata"
+        public int? YearComposed { get; set; }        // Nullable if unknown
 
-        // Required relationship
-        public Composer Composer { get; set; } = null!;  // Remove "?"
+        // Foreign keys
+        public int ComposerID { get; set; }
+        public int EnsembleTypeID { get; set; }
+        public int GenreID { get; set; }
 
-        // Optional relationships (keep "?")
-        public EnsembleType? EnsembleType { get; set; }
-        public Genre? Genre { get; set; }
-
-        public ICollection<Recording> Recordings { get; set; } = new List<Recording>();
+        // Navigation properties
+        public Composer? Composer { get; set; }       // Linked composer
+        public EnsembleType? EnsembleType { get; set; } // Linked ensemble
+        public Genre? Genre { get; set; }             // Linked genre
+        public ICollection<Recording>? Recordings { get; set; } // 1 work → many recordings
     }
 }
